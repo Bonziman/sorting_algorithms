@@ -21,8 +21,6 @@ void swap(int *xp, int *yp)
  *
  * @array: the unsorted array to be sorted
  * @size: size of the array
- *
- * Returns: a sorted array
  */
 void bubble_sort(int *array, size_t size)
 {
