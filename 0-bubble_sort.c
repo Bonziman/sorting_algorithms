@@ -6,10 +6,10 @@
  * @yp: second element
  * Returns: nothing
  */
-void swap(int* xp, int* yp)
+void swap(int *xp, int *yp)
 {
 	int tmp;
-	
+
 	tmp = *xp;
 	*xp = *yp;
 	*yp = tmp;
@@ -30,9 +30,11 @@ void bubble_sort(int *array, size_t size)
 	int j;
 	int min_idx;
 
-	for (i = 0; i < size; i++){
+	for (i = 0; i < size; i++)
+	{
 		min_idx = i;
-		for (j = i + 1; j < size; j++){
+		for (j = i + 1; j < size; j++)
+		{
 			if (array[j] < array[min_idx])
 				min_idx = j;
 		}
