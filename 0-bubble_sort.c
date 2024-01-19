@@ -26,8 +26,8 @@ void swap(int *xp, int *yp)
  */
 void bubble_sort(int *array, size_t size)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 	int min_idx;
 
 	for (i = 0; i < size; i++)
