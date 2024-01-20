@@ -23,4 +23,7 @@ void swap(int *xp, int *yp);
 int main(void);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
+void quick_sort(int *array, size_t size);
+void quick_sort_recursive(int *array, int low, int high, size_t size);
+int lomuto_partition(int *array, int low, int high, size_t size);
 #endif /* SORT */
