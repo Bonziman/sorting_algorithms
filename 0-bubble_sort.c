@@ -24,19 +24,17 @@ void swap(int *xp, int *yp)
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i;
-	size_t j;
-	int min_idx;
+	size_t i, j;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size - 1; i++)
 	{
-		min_idx = i;
-		for (j = i + 1; j < size; j++)
+		for (j = 0; j < size - i - 1; j++)
 		{
-			if (array[j] < array[min_idx])
-				min_idx = j;
+			if (array[j] > array[j + 1])
+			{
+				swap(&array[j], &array[j + 1]);
+				print_array(array, size);
+			}
 		}
-	swap(&array[min_idx], &array[i]);
-	print_array(array, size);
 	}
 }
