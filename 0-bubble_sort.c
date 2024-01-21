@@ -26,11 +26,11 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 
-	if (size < 2)
+	if (size < 1)
 	{
 		return;
 	}
-	else if (size > 2)
+	else if (size > 1)
 	{
 		for (i = 0; i < size - 1; i++)
 		{
