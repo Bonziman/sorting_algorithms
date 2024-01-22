@@ -26,10 +26,13 @@ void quick_sort_recursive(int *array, int low, int high, size_t size)
 {
 	if (low < high)
 	{
-		int pivot = lomuto_partition(array, low, high, size);
+		int pivotIndex = rand() % (high - low + 1) + low;
+		int pivot = lumuto_partition(array, low, high, size);
 
+		swap(&array[pivotIndex], &array[high]);
 		quick_sort_recursive(array, low, pivot - 1, size);
 		quick_sort_recursive(array, pivot + 1, high, size);
+
 	}
 }
 
@@ -74,4 +77,28 @@ void swap(int *xp, int *yp)
 	int temp = *xp;
 	*xp = *yp;
 	*yp = temp;
+}
+/**
+ * insertion_sort - Sorts a subarray of integers in ascending order
+ *                  using the Insertion Sort algorithm.
+ *
+ * @array: The array to be sorted.
+ * @low: The starting index of the subarray.
+ * @high: The ending index of the subarray.
+ */
+void insertion_sort(int *array, int low, int high)
+{
+	int i, j, key;
+
+	for (i = low + 1; i <= high, i++)
+	{
+		key = array[i];
+		j = j - 1;
+		while (j >= low && array[j] > key)
+		{
+			array[j + 1] = array[j];
+			j = j - 1;
+		}
+		array[j + 1] = key;
+	}
 }
