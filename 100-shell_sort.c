@@ -7,24 +7,19 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t i;
-	int tmp, j, increment;
-	
-	for (increment = size / 2; increment > 0; increment /= 2)
+	size_t i, gap, j;
+	int tmp;
+
+	for (gap = 1; gap <= size / 3; gap = gap * 3 + 1)
+	;
+	for (; gap > 0; gap /= 3)
 	{
-		for (i = increment; i < size; i++)
+		for (i = gap; i < size; i++)
 		{
 			tmp = array[i];
-			for (j = i; j >= increment; j -= increment)
+			for (j = i; j >= gap && array[j - gap] > tmp; j -= gap)
 			{
-				if (tmp < array[j - increment])
-				{
-					array[j] = array[j - increment];
-				}
-				else
-				{
-					break;
-				}
+				array[j] = array[j - gap];
 			}
 			array[j] = tmp;
 		}
